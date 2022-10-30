@@ -6,15 +6,35 @@
         xmlns:local="clr-namespace:ToDoApp"
         mc:Ignorable="d"
         Title="TodoApp" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid>
-        <DataGrid x:Name="dgTodoList" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
+    <Grid Background="#FF1B0429">
+        <Grid.OpacityMask>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF332424" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.OpacityMask>
+        <DataGrid x:Name="dgTodoList" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False" BorderBrush="#FF082C50" OpacityMask="#FF520992" Background="#FF210C0C">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path = CreationDate}" IsReadOnly="True" Header="CreationDate" Width="160"/>
+                <DataGridTextColumn Binding="{Binding Path = CreationDate}" IsReadOnly="True" Header="CreationDate" Width="160">
+                    <DataGridTextColumn.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FF3C1717" Offset="1"/>
+                        </LinearGradientBrush>
+                    </DataGridTextColumn.Foreground>
+                </DataGridTextColumn>
                 <DataGridCheckBoxColumn Binding="{Binding Path = IsDone, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="False" Header="Done" Width="65"/>
-                <DataGridTextColumn Binding="{Binding Path = Text}" IsReadOnly="False" Header="Todo" Width="*"/>
-                
+                <DataGridTextColumn Binding="{Binding Path = Text}" IsReadOnly="False" Header="Todo" Width="*">
+                    <DataGridTextColumn.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FF250D0D" Offset="1"/>
+                        </LinearGradientBrush>
+                    </DataGridTextColumn.Foreground>
+                </DataGridTextColumn>
+
             </DataGrid.Columns>
         </DataGrid>
-        
+
     </Grid>
 </Window>
