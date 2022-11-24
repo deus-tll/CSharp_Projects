@@ -67,24 +67,5 @@ namespace ToDoApp
 
 			
 		}
-
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
-			var t = _todoDataList.ToList();
-
-			t.Sort((s1, s2) => s1.Text.CompareTo(s2.Text));
-
-			_todoDataList.Clear();
-
-			foreach (var item in t)
-			{
-				_todoDataList.Add(item);
-			}
-		}
-
-		private void Button_Click_1(object sender, RoutedEventArgs e)
-		{
-
-		}
 	}
 }
