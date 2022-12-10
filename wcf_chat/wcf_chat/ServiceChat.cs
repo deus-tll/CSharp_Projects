@@ -39,7 +39,7 @@ namespace wcf_chat
 				SendMsg(": " + user.Name + " покинув чат.", 0);
 			}
 		}
-
+		  
 		public void SendMsg(string msg, int id)
 		{
 			foreach (var user in users)
